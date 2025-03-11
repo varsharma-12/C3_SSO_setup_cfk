@@ -1,39 +1,10 @@
 # C3_SSO_setup_cfk
-Setup IDP (Identity Provider) Azure EntraID 
+This involves setting up IDP (Azure Entra ID ) & Service Provider (Confluent Platform kafka Cluster)
 
-Step 1 - Establish trust between the IdP and Confluent Platform
+steps to configure SSO using OIDC based IDP Azure Entra ID for C3 deployed via CFK  referring :
 
-You can sign up with a free trial on Azure   Microsoft Azure or login to Azure via Okta https://portal.azure.com/#home
+1. [Configure single sign-on (SSO) using OpenID Connect (OIDC) | Confluent Documentation  
+](https://docs.confluent.io/platform/current/security/authentication/sso-for-c3/configure-sso-using-oidc.html#configuration-prerequisites-and-process)
 
-Register OIDC client Application (Add Redirect URi once the CFK cluster is deployed )
-
-Create Client Secret 
-
-Add group claims in Token Configuration.
-
-Capture IDP endpoints required to fetch, authorize, and verify tokens from OpenID Connect metadata document URL
-
-https://login.microsoftonline.com/0893715b-959b-4906-a185-2789e1ead045/v2.0/.well-known/openid-configuration
-
-Token endpoint URL (token_endpoint) : 
-
-Authorization endpoint URL (authorization_endpoint)
-
-JSON Web Key Set (JWKS) URL (jwks_uri)
-
-Issuer URL (issuer)
-
-Example: 
-
-
-
-token_endpoint":"https://login.microsoftonline.com/0893715b-959b-4906-a185-2789e1ead045/oauth2/v2.0/token
-authorization_endpoint":"https://login.microsoftonline.com/0893715b-959b-4906-a185-2789e1ead045/oauth2/v2.0/authorize
-jwks_uri":"https://login.microsoftonline.com/0893715b-959b-4906-a185-2789e1ead045/discovery/v2.0/keys
-issuer":"https://login.microsoftonline.com/0893715b-959b-4906-a185-2789e1ead045/v2.0
- 
-
-Open image-20250307-102709.png
-image-20250307-102709.png
-Application Endpoints
- 
+2. [Configure Authentication for Confluent Platform Components Using Confluent for Kubernetes | Confluent Documentation](https://docs.confluent.io/operator/current/co-authenticate-cp.html#co-authenticate-c3-sso
+) 
