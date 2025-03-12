@@ -11,6 +11,7 @@ Steps to configure SSO using OIDC based IDP Azure Entra ID for C3 deployed via C
 
 **Setup IDP (Identity Provider) Azure EntraID 
 **
+
 Step 1 - Establish trust between the IdP and Confluent Platform
 
 You can sign up with a free trial on Azure   Microsoft Azure or login to Azure via Okta https://portal.azure.com/#home
