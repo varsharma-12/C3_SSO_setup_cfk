@@ -130,7 +130,7 @@ Deploy configuration secrets
 
 Provide component TLS certificates
 
-These Azure IDP certs should to be imported in MDS truststore.:Azure TLS Certificate Changes 
+These [Azure IDP certs](https://learn.microsoft.com/en-us/azure/security/fundamentals/tls-certificate-changes#what-change) should to be imported in MDS truststore.:Azure TLS Certificate Changes 
 
 Convert the certificates to .pem
 
