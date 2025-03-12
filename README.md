@@ -78,7 +78,7 @@ In this Example setup the Kafka CR is configured with MDS and LDAP as the MDS id
 
 Prerequisites:
 
-a. Create a K8s cluster on any cloud provider (AKS/EKS/GKE) referring Confluent For Kubernetes Deployment 
+a. Create a K8s cluster on any cloud provider (AKS/EKS/GKE) 
 
 b. A namespace created in the Kubernetes cluster - confluent
 
