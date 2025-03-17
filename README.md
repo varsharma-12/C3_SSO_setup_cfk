@@ -246,9 +246,8 @@ kubectl port-forward controlcenter-0 9021:9021 -n confluent
 Access C3 URL to login via SSO:
 ```
 https://localhost:9021
-or via External IP 
-https://34.118.237.27:443
 ```
+
 
 Check C3 pods logs to check for the User: principal 
 
@@ -279,7 +278,7 @@ spec:
   role: SystemAdmin
 ````
 ```
-kubectl apply -f  c3_rb.yaml
+kubectl apply -f  $TUTORIAL_HOME/controlcenter-rolebinding.yaml
 ```
 C3 UI should be successfully accessible via SSO.
 
