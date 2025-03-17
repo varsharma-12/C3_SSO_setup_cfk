@@ -252,9 +252,11 @@ https://34.118.237.27:443
 
 Check C3 pods logs to check for the User: principal 
 
+```
+kubectl logs controlcenter-0 -n confluent | grep "User:"
+```
+
 Sample logs 
-
-
 ````
 [INFO] 2025-03-06 13:48:22,610 [qtp766446793-231] io.confluent.rest-utils.requests write - 10.16.0.5 - ZdpHlzTwv2DCnYJRMsWCeeXE6F4kUooA0d7qflmAui4 [06/Mar/2025:13:48:22 +0000] "POST /security/1.0/lookup/principals/User:ZdpHlzTwv2DCnYJRMsWCeeXE6F4kUooA0d7qflmAui4/visibility HTTP/1.1" 200 139 "-" "Jetty/9.4.54.v20240208" requestTime-16 httpStatusCode-200
 [INFO] 2025-03-06 13:48:22,612 [qtp766446793-227] io.confluent.rest-utils.requests write - 10.16.0.5 - ZdpHlzTwv2DCnYJRMsWCeeXE6F4kUooA0d7qflmAui4 [06/Mar/2025:13:48:22 +0000] "POST /security/1.0/lookup/principals/User:ZdpHlzTwv2DCnYJRMsWCeeXE6F4kUooA0d7qflmAui4/visibility HTTP/1.1" 200 139 "-" "Jetty/9.4.54.v20240208" requestTime-20 httpStatusCode-200
