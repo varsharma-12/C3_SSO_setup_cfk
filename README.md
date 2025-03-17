@@ -137,15 +137,17 @@ Convert the certificates to .pem
 ````
 openssl x509 -in DigiCertGlobalRootG2.crt -out DigiCertGlobalRootG2.pem -outform PEM
 openssl x509 -in DigiCertGlobalRootCA.crt -out DigiCertGlobalRootCA.pem -outform PEM
-openssl x509 -in BaltimoreCyberTrustRoot.crt -out BaltimoreCyberTrustRoot.pem  -outform PEM
-openssl x509 -in Microsoft RSA Root Certificate Authority 2017.crt -out Microsoft RSA Root Certificate Authority 2017.pem  -outform PEM
-openssl x509 -in 'Microsoft ECC Root Certificate Authority 2017.crt' -out 'Microsoft ECC Root Certificate Authority 2017.pem’  -outform PEM
-openssl x509 -in 'D-TRUST_Root_Class_3_CA_2_2009.crt' -out 'D-TRUST_Root_Class_3_CA_2_2009.pem’  -outform PEM
+openssl x509 -in BaltimoreCyberTrustRoot.crt -out BaltimoreCyberTrustRoot.pem -outform PEM
+openssl x509 -in Microsoft RSA Root Certificate Authority 2017.crt -out Microsoft RSA Root Certificate Authority 2017.pem -outform PEM
+openssl x509 -in 'Microsoft ECC Root Certificate Authority 2017.crt' -out 'Microsoft ECC Root Certificate Authority 2017.pem’ -outform PEM
+openssl x509 -in 'D-TRUST_Root_Class_3_CA_2_2009.crt' -out 'D-TRUST_Root_Class_3_CA_2_2009.pem’ -outform PEM
 ````
 Concat all .pem file to a single file.
 ````
 cat 'DigiCertGlobalRootG2.pem' 'DigiCertGlobalRootCA.pem' 'BaltimoreCyberTrustRoot.pem' 'Microsoft RSA Root Certificate Authority 2017.pem' 'Microsoft ECC Root Certificate Authority 2017.pem' 'D-TRUST_Root_Class_3_CA_2_2009.pem' >> Azure_idp.pem
 ````
+You can create your own certs by following : https://github.com/confluentinc/confluent-kubernetes-examples/tree/master/security/control-center-sso#appendix-create-your-own-certificates
+
 Add Azure IDP certs to ca.pem 
 ```
 cd $TUTORIAL_HOME/../../assets/certs/generated/
@@ -257,9 +259,10 @@ Sample logs
 [INFO] 2025-03-06 13:48:22,610 [qtp766446793-231] io.confluent.rest-utils.requests write - 10.16.0.5 - ZdpHlzTwv2DCnYJRMsWCeeXE6F4kUooA0d7qflmAui4 [06/Mar/2025:13:48:22 +0000] "POST /security/1.0/lookup/principals/User:ZdpHlzTwv2DCnYJRMsWCeeXE6F4kUooA0d7qflmAui4/visibility HTTP/1.1" 200 139 "-" "Jetty/9.4.54.v20240208" requestTime-16 httpStatusCode-200
 [INFO] 2025-03-06 13:48:22,612 [qtp766446793-227] io.confluent.rest-utils.requests write - 10.16.0.5 - ZdpHlzTwv2DCnYJRMsWCeeXE6F4kUooA0d7qflmAui4 [06/Mar/2025:13:48:22 +0000] "POST /security/1.0/lookup/principals/User:ZdpHlzTwv2DCnYJRMsWCeeXE6F4kUooA0d7qflmAui4/visibility HTTP/1.1" 200 139 "-" "Jetty/9.4.54.v20240208" requestTime-20 httpStatusCode-200
 ````
-Add Role Bindings to principal .
+Edit the Role Bindings to principal in controlcenter-rolebinding.yaml
 
- c3_rb.yaml
+Example :
+
 ```
 ---
 apiVersion: platform.confluent.io/v1beta1
