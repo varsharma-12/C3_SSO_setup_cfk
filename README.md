@@ -18,20 +18,19 @@ You can sign up with a free trial on Azure  Microsoft Azure
 
 1. Register OIDC client Application (Add Redirect URi once the CFK cluster is deployed )
 
+<img width="1292" height="961" alt="Register an application" src="https://github.com/user-attachments/assets/b5dd7e16-6404-40bd-881f-b00e2e538863" />
 
-https://github.com/user-attachments/assets/f74f1c93-5131-4010-9dbf-e37c09696b23
+
 
 2. Create Client Secret
 
+<img width="1367" height="669" alt="unknown" src="https://github.com/user-attachments/assets/dc596172-3558-4756-8068-71e3f15b97ee" />
+
    
-https://github.com/user-attachments/assets/81002926-10fa-4c81-941b-d4700cc3ffd9
 
 3. Add group claims in Token Configuration.
 
-
-
-https://github.com/user-attachments/assets/ea4013ba-9e86-49a7-9446-ac953a9ca476
-
+<img width="1715" height="898" alt="unknown" src="https://github.com/user-attachments/assets/500b6991-df5c-49a7-9c1b-3914983380ac" />
 
 
 4. Capture IDP endpoints required to fetch, authorize, and verify tokens from OpenID Connect metadata document URL
